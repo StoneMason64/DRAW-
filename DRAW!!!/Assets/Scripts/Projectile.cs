@@ -5,21 +5,25 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] float speed = 1;
+    [SerializeField] 
+    protected float speed = 1;
 
+    [SerializeField]
+    private float force = 100;
+
+    protected Transform player;
     protected Rigidbody rigidbody;
 
+    Vector3 direction;
 
     // Start is called before the first frame update
     protected void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();        
-    }
+        player = GameObject.FindWithTag("Player").transform;
+        rigidbody = GetComponent<Rigidbody>();
+        direction = (player.position - transform.position).normalized;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        rigidbody.AddForce(direction * force * speed);
     }
 
     private void OnCollisionEnter(Collision collision)

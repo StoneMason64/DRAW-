@@ -3,16 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CurvedProjectile : Projectile
-{
-    Transform player;
-
+{   
     public float ThrowHeight { get; set; }
 
     // Start is called before the first frame update
     void Start()
     {
-        base.Start();
         player = GameObject.FindWithTag("Player").transform;
+        rigidbody = GetComponent<Rigidbody>();
         rigidbody.velocity = CalculateLaunchData().initialVelocity;
     }
 

@@ -236,11 +236,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851924, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.54
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851924, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.6
+      value: -3.4
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851924, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -273,6 +273,26 @@ PrefabInstance:
     - target: {fileID: 597572365520851926, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: m_Name
       value: Spawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851926, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: showPath
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 4162535462164360323, guid: 300bdc50dd569ad47834bc08020d32ae, type: 3}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: initialTimeDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: timeBetweenSpawns
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
@@ -378,6 +398,22 @@ PrefabInstance:
     - target: {fileID: 597572365520851926, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: m_Name
       value: Spawner (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851926, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 4162535462164360323, guid: e37903a999be5d4409765b8956f436df, type: 3}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: initialTimeDelay
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: timeBetweenSpawns
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
@@ -635,15 +671,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851924, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -34.2
+      value: -25.39
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851924, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.54
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851924, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.1
+      value: 7.61
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851924, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -676,6 +712,22 @@ PrefabInstance:
     - target: {fileID: 597572365520851926, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: m_Name
       value: Spawner (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851926, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 4162535462164360323, guid: 67e0e96faa8cc19468af567e67736a29, type: 3}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: initialTimeDelay
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: timeBetweenSpawns
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
@@ -792,7 +844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851924, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.54
+      value: 6.38
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851924, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -834,5 +886,17 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 691019708}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: showPath
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: objectToSpawn
+      value: 
+      objectReference: {fileID: 4162535462164360323, guid: 67e0e96faa8cc19468af567e67736a29, type: 3}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: timeBetweenSpawns
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}

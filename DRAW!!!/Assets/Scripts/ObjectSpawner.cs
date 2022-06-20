@@ -5,13 +5,23 @@ using UnityEngine;
 public class ObjectSpawner : MonoBehaviour
 {
     public GameObject objectToSpawn;
+
+    [SerializeField][Range(0.1f, 10f)]
+    float initialTimeDelay = 1.0f;
+    [SerializeField][Range(0.1f, 10f)]
+    float timeBetweenSpawns = 3.0f;
+    [SerializeField] 
+    bool showPath = true;
+
+    [Header("Curved Motion")]
+    [Tooltip("Changes the arc of objects thrown at a curved motion")]
     [SerializeField][Range(0, 25f)]
     float throwHeight = 10;
 
-    [SerializeField] bool showPath = true;
-
-    Transform player;
+    // private variables
+    private Transform player;
     private LaunchData data;
+    private CurvedProjectile projectile;
     private float h;
 
     // Start is called before the first frame update
@@ -19,15 +29,24 @@ public class ObjectSpawner : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
 
-        var spawnedObject = Instantiate(objectToSpawn, transform.position, transform.rotation);
-        CurvedProjectile projectile = spawnedObject.GetComponent<CurvedProjectile>();
-        projectile.ThrowHeight = throwHeight;
+        Invoke("SpawnObject", initialTimeDelay);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void SpawnObject()
+    {      
+        var spawnedObject = Instantiate(objectToSpawn, transform.position, transform.rotation);
+        projectile = spawnedObject.GetComponent<CurvedProjectile>();
+
+        if (projectile != null)
+            projectile.ThrowHeight = throwHeight;
+
+        Invoke("SpawnObject", timeBetweenSpawns);
     }
 
     /// <summary>
@@ -58,6 +77,14 @@ public class ObjectSpawner : MonoBehaviour
 
         if (!showPath || player == null)
             return;
+
+        // check if the object is to be thrown in a curve
+        if (!objectToSpawn.GetComponent<CurvedProjectile>())
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(transform.position, player.position);
+            return;
+        }
 
         LaunchData launchData = CalculateLaunchData();
         Vector3 previousDrawPoint = transform.position;
