@@ -125,7 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8e331a53760fe4d9ac7e1a9aec19c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  objectToSpawn: {fileID: 4162535462164360323, guid: 36d6ec4106d68154aad7e8b2177da4fa, type: 3}
-  throwHeight: 10
+  objectToSpawn: {fileID: 0}
+  initialTimeDelay: 1
+  timeBetweenSpawns: 3
   showPath: 1
+  throwHeight: 10

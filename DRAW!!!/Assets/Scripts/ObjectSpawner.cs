@@ -6,9 +6,9 @@ public class ObjectSpawner : MonoBehaviour
 {
     public GameObject objectToSpawn;
 
-    [SerializeField][Range(0.1f, 10f)]
+    [SerializeField][Range(0.1f, 30f)]
     float initialTimeDelay = 1.0f;
-    [SerializeField][Range(0.1f, 10f)]
+    [SerializeField][Range(0.1f, 30f)]
     float timeBetweenSpawns = 3.0f;
     [SerializeField] 
     bool showPath = true;
