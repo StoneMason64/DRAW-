@@ -7,41 +7,32 @@ public class CurvedProjectile : Projectile
     public float ThrowHeight { get; set; }
 
     LaunchData launchData;
-    int resolution = 30;
-    int timeStep = 0;
 
-    Vector3 previousPos;
+    float simulationTime = 0;    
+    Vector3 initialPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
         rigidbody = GetComponent<Rigidbody>();
-        rigidbody.velocity = CalculateLaunchData().initialVelocity;
-        //launchData = CalculateLaunchData();
-
-        //previousPos = transform.position;
+        
+        launchData = CalculateLaunchData();
+        initialPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        if(timeStep < resolution)
-        {
-            float simulationTime = timeStep / (float)resolution * launchData.timeToTarget;
-            Vector3 displacement = launchData.initialVelocity * simulationTime + Physics.gravity * simulationTime * simulationTime / 2f;
-            //rigidbody.velocity = displacement * resolution;
-            Vector3 translation = transform.position + displacement;
+        // increment the total time by the frame time multiplied by the scale
+        simulationTime += Time.deltaTime * speed;
+        
+        // calculate the displacement from current from starting position
+        // = v * t + (gravity * t^2 / 2)
+        Vector3 displacement = launchData.initialVelocity * simulationTime + Physics.gravity * simulationTime * simulationTime / 2.0f;
 
-            transform.position = previousPos + translation;
-
-            previousPos = transform.position;
-            timeStep++;
-
-            //Debug.Log(translation);
-        }*/
-
+        // update the position
+        transform.position = initialPosition + displacement;
     }
 
     LaunchData CalculateLaunchData()
