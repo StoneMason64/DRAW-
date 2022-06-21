@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,18 +11,24 @@ public class ObjectSpawner : MonoBehaviour
     float initialTimeDelay = 1.0f;
     [SerializeField][Range(0.1f, 30f)]
     float timeBetweenSpawns = 3.0f;
-    [SerializeField] 
-    bool showPath = true;
+
+    [Header("Time Scales")]
+    [SerializeField][Range(0.1f, 10)]
+    float travelSpeed = 1;
+    [SerializeField] [Range(0.1f, 2)]
+    float delayScale = 1;
 
     [Header("Curved Motion")]
     [Tooltip("Changes the arc of objects thrown at a curved motion")]
     [SerializeField][Range(0, 25f)]
     float throwHeight = 10;
+    [SerializeField]
+    bool showPath = true;
 
     // private variables
     private Transform player;
     private LaunchData data;
-    private CurvedProjectile projectile;
+    private Projectile projectile;
     private float h;
 
     // Start is called before the first frame update
@@ -41,12 +48,14 @@ public class ObjectSpawner : MonoBehaviour
     void SpawnObject()
     {      
         var spawnedObject = Instantiate(objectToSpawn, transform.position, transform.rotation);
-        projectile = spawnedObject.GetComponent<CurvedProjectile>();
+        projectile = spawnedObject.GetComponent<Projectile>();
 
-        if (projectile != null)
-            projectile.ThrowHeight = throwHeight;
+        projectile.TimeScale = travelSpeed;
 
-        Invoke("SpawnObject", timeBetweenSpawns);
+        if (projectile.GetType().Equals(typeof(CurvedProjectile)))
+            ((CurvedProjectile)projectile).ThrowHeight = throwHeight;
+
+        Invoke("SpawnObject", timeBetweenSpawns * delayScale);
     }
 
     /// <summary>

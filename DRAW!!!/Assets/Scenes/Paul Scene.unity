@@ -187,9 +187,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: travelSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: objectToSpawn
       value: 
-      objectReference: {fileID: 4162535462164360323, guid: 300bdc50dd569ad47834bc08020d32ae, type: 3}
+      objectReference: {fileID: 4162535462164360323, guid: 36d6ec4106d68154aad7e8b2177da4fa, type: 3}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: initialTimeDelay
       value: 2
@@ -260,9 +268,21 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: showPath
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: travelSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: objectToSpawn
       value: 
-      objectReference: {fileID: 4162535462164360323, guid: e37903a999be5d4409765b8956f436df, type: 3}
+      objectReference: {fileID: 4162535462164360323, guid: 36d6ec4106d68154aad7e8b2177da4fa, type: 3}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: initialTimeDelay
       value: 4
@@ -483,9 +503,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: travelSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: objectToSpawn
       value: 
-      objectReference: {fileID: 4162535462164360323, guid: 67e0e96faa8cc19468af567e67736a29, type: 3}
+      objectReference: {fileID: 4162535462164360323, guid: 36d6ec4106d68154aad7e8b2177da4fa, type: 3}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: initialTimeDelay
       value: 3
@@ -723,6 +751,10 @@ PrefabInstance:
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: throwHeight
       value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: travelSpeed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: objectToSpawn
