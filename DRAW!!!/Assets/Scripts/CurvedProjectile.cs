@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CurvedProjectile : Projectile
-{   
+{
+    [SerializeField]
+    protected float speed = 1;
+
     public float ThrowHeight { get; set; }
 
     LaunchData launchData;
     float simulationTime = 0;
     Vector3 initialPosition;
+    float weight;
 
     // Start is called before the first frame update
     void Start()
@@ -19,17 +23,19 @@ public class CurvedProjectile : Projectile
 
         launchData = CalculateLaunchData();
         initialPosition = transform.position;
+
+        weight = rigidbody.mass * Physics.gravity.y + rigidbody.drag;
     }
 
     // Update is called once per frame
     void Update()
     {
         // increment the total time by the frame time multiplied by the scale
-        simulationTime += Time.deltaTime * TimeScale;
+        simulationTime += Time.deltaTime * TimeScale * speed;
 
         // calculate the displacement from current from starting position
         // = v * t + (gravity * t^2 / 2)
-        Vector3 displacement = launchData.initialVelocity * simulationTime + Physics.gravity * simulationTime * simulationTime / 2.0f;
+        Vector3 displacement = launchData.initialVelocity * simulationTime + Vector3.up * weight * simulationTime * simulationTime / 2.0f;
 
         // update the position
         transform.position = initialPosition + displacement;

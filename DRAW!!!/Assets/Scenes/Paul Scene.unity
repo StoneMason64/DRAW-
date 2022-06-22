@@ -197,10 +197,10 @@ PrefabInstance:
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: objectToSpawn
       value: 
-      objectReference: {fileID: 4162535462164360323, guid: 36d6ec4106d68154aad7e8b2177da4fa, type: 3}
+      objectReference: {fileID: 4162535462164360323, guid: 71d13ff2b8e57f340b90348aa9840d21, type: 3}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: initialTimeDelay
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: timeBetweenSpawns
@@ -229,7 +229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851924, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.79
+      value: -31.6
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851924, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -282,10 +282,10 @@ PrefabInstance:
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: objectToSpawn
       value: 
-      objectReference: {fileID: 4162535462164360323, guid: 36d6ec4106d68154aad7e8b2177da4fa, type: 3}
+      objectReference: {fileID: 4162535462164360323, guid: 0e0d98b07848f6d4f8383b86c17b7894, type: 3}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: initialTimeDelay
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: timeBetweenSpawns
@@ -516,7 +516,7 @@ PrefabInstance:
       objectReference: {fileID: 4162535462164360323, guid: 36d6ec4106d68154aad7e8b2177da4fa, type: 3}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: initialTimeDelay
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: timeBetweenSpawns
@@ -750,7 +750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: throwHeight
-      value: 1.6
+      value: 7.8
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: travelSpeed

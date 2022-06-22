@@ -5,9 +5,7 @@ using UnityEngine;
 public class StraightProjectile : Projectile
 {
     [SerializeField]
-    private float force = 100;
-    [SerializeField]
-    protected float speed = 1;
+    private float force = 100;    
 
     Vector3 direction;
 
@@ -18,7 +16,7 @@ public class StraightProjectile : Projectile
 
         direction = (player.position - transform.position).normalized;
 
-        rigidbody.AddForce(direction * force * speed);
+        rigidbody.AddForce(direction * force);
     }
 
 }
