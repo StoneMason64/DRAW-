@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour
 {
+    #region variable delcaration
     public GameObject objectToSpawn;
 
     [SerializeField][Range(0.1f, 30f)]
@@ -31,10 +32,16 @@ public class ObjectSpawner : MonoBehaviour
     private Projectile projectile;
     private float h;
 
+    private float initialTravelSpeed;
+    private float initialDelayScale;
+    #endregion
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
+        initialTravelSpeed = travelSpeed;
+        initialDelayScale = delayScale;
 
         Invoke("SpawnObject", initialTimeDelay);
     }
@@ -45,17 +52,16 @@ public class ObjectSpawner : MonoBehaviour
         
     }
 
-    void SpawnObject()
-    {      
-        var spawnedObject = Instantiate(objectToSpawn, transform.position, transform.rotation);
-        projectile = spawnedObject.GetComponent<Projectile>();
+    #region public functions
+    // Setters
+    public void IncreaseTravelSpeed(float percent)
+    {
+        travelSpeed += initialTravelSpeed * (percent / 100);
+    }
 
-        projectile.TimeScale = travelSpeed;
-
-        if (projectile.GetType().Equals(typeof(CurvedProjectile)))
-            ((CurvedProjectile)projectile).ThrowHeight = throwHeight;
-
-        Invoke("SpawnObject", timeBetweenSpawns * delayScale);
+    public void ReduceTimeDelay(float percent)
+    {
+        delayScale -= initialDelayScale * (percent / 100);
     }
 
     /// <summary>
@@ -78,6 +84,21 @@ public class ObjectSpawner : MonoBehaviour
         Vector3 velocityXZ = displacementXZ / time;
 
         return new LaunchData(velocityXZ + velocityY * -Mathf.Sign(gravity), time);
+    }
+    #endregion
+
+    #region private functions
+    void SpawnObject()
+    {      
+        var spawnedObject = Instantiate(objectToSpawn, transform.position, transform.rotation);
+        projectile = spawnedObject.GetComponent<Projectile>();
+
+        projectile.TimeScale = travelSpeed;
+
+        if (projectile.GetType().Equals(typeof(CurvedProjectile)))
+            ((CurvedProjectile)projectile).ThrowHeight = throwHeight;
+
+        Invoke("SpawnObject", timeBetweenSpawns * delayScale);
     }
 
     private void OnDrawGizmos()
@@ -113,7 +134,7 @@ public class ObjectSpawner : MonoBehaviour
             previousDrawPoint = drawPoint;
         }
     }
-
+    #endregion
 }
 
 public struct LaunchData

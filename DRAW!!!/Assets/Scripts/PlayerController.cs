@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public Transform revolver;
     public Transform tommahawk;
 
+    public GameManager gameManager;
+
     public bool fireFromCamera = false;    
 
     // Start is called before the first frame update
@@ -20,11 +22,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawLine(camera.position, camera.position + camera.forward * 50, Color.blue);
+        Debug.DrawLine(camera.position, camera.position + camera.forward * 50, Color.blue);        
     }
 
     public void FireGun()
     {
+        if (!gameManager.GameRunning)
+            return;
+
         //Debug.Log("Firing gun from position:" + revolver.position);
 
         RaycastHit hit;
@@ -42,15 +47,24 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("Raycast hit " + hit.transform.name);
 
-            if(hit.transform.gameObject.layer == 6) // projectile layer
-            {
-                Debug.Log("Object Destroyed");
-                GameObject.Destroy(hit.transform.gameObject);
+            var enemyObject = hit.transform.gameObject;
+
+            if (enemyObject.layer == 6) // projectile layer
+            {                
+                gameManager.AddPoints(enemyObject.GetComponent<Projectile>().Points);
+                GameObject.Destroy(enemyObject);
+                //Debug.Log("You Destroyed " + enemyObject.name);
             }
         }
-        else
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == 6)
         {
-            //Debug.Log("Raycast did not hit anything");
+            Debug.Log("Player was hit by a projectile");
+            gameManager.LoseLife();
         }
+
     }
 }

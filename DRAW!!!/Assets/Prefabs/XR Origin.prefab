@@ -714,7 +714,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4917202189142401422}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -812,7 +812,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4917202189142401422}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e988983f96fe1dd48800bcdfc82f23e9, type: 3}
   m_Name: 
@@ -1425,7 +1425,6 @@ GameObject:
   - component: {fileID: 4917202189893863772}
   - component: {fileID: 4917202189893863775}
   - component: {fileID: 89893254}
-  - component: {fileID: 89893257}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -1480,7 +1479,7 @@ MonoBehaviour:
   onLeftClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 89893257}
+      - m_Target: {fileID: 1723992945}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: FireGun
         m_Mode: 1
@@ -1495,22 +1494,6 @@ MonoBehaviour:
   onRightClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &89893257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4917202189893863774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d9608acc0cfbba47a3e591f497501e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 4917202189021220379}
-  revolver: {fileID: 4917202189142401423}
-  tommahawk: {fileID: 4917202189697088562}
-  fireFromCamera: 1
 --- !u!1 &8843658782342761697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,6 +1506,7 @@ GameObject:
   - component: {fileID: 8843658782342761701}
   - component: {fileID: 8843658782342761702}
   - component: {fileID: 8843658782342761703}
+  - component: {fileID: 1723992945}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1607,3 +1591,20 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1723992945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8843658782342761697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9608acc0cfbba47a3e591f497501e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 4917202189021220379}
+  revolver: {fileID: 4917202189142401423}
+  tommahawk: {fileID: 4917202189697088562}
+  gameManager: {fileID: 0}
+  fireFromCamera: 1
