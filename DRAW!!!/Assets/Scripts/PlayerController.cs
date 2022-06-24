@@ -11,18 +11,23 @@ public class PlayerController : MonoBehaviour
 
     public GameManager gameManager;
 
-    public bool fireFromCamera = false;    
+    [SerializeField]
+    bool fireFromCamera = false;
+
+    float meleeRadius = 0.001f;
 
     // Start is called before the first frame update
     void Start()
     {
-         
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawLine(camera.position, camera.position + camera.forward * 50, Color.blue);        
+        Debug.DrawLine(camera.position, camera.position + camera.forward * 50, Color.blue);
+
+        //UseMeleeWeapon();
     }
 
     public void FireGun()
@@ -50,15 +55,54 @@ public class PlayerController : MonoBehaviour
             var enemyObject = hit.transform.gameObject;
 
             if (enemyObject.layer == 6) // projectile layer
-            {                
-                gameManager.AddPoints(enemyObject.GetComponent<Projectile>().Points);
-                GameObject.Destroy(enemyObject);
-                //Debug.Log("You Destroyed " + enemyObject.name);
+            {            
+                var projectile = enemyObject.GetComponent<Projectile>();
+
+                if (projectile.CanBeShot)
+                {
+                    gameManager.AddPoints(projectile.Points);
+                    GameObject.Destroy(enemyObject);
+                    Debug.Log(enemyObject.name + "Was destroyed by revolver");
+                }
+                else
+                {
+                    Debug.Log("Object cannot be shot");
+                }
+            }
+        }
+
+    }
+
+    private void UseMeleeWeapon()
+    {
+        Ray ray = new Ray(tommahawk.position, transform.forward);
+        RaycastHit hit;
+
+        if (Physics.SphereCast(ray, meleeRadius, out hit))
+        {
+            GameObject enemyObject = hit.transform.gameObject;
+
+            if (enemyObject.layer == 6)
+            {
+                var projectile = enemyObject.GetComponent<Projectile>();
+
+                if (projectile.DestroyedByMelee)
+                {
+                    gameManager.AddPoints(projectile.Points);
+                    GameObject.Destroy(enemyObject);
+                    Debug.Log(enemyObject.name + "Was destroyed by tomahawk");
+                }
+                else
+                {
+                    Debug.Log("Object cannot be destroyed by tomahawk");
+                }
+
             }
         }
     }
 
-    public void OnCollisionEnter(Collision collision)
+
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == 6)
         {
@@ -67,4 +111,10 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(tommahawk.position + transform.forward, meleeRadius);
+    }
+
 }

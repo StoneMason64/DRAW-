@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class StraightProjectile : Projectile
 {
+    [Header("Straight projectile properties")]
     [SerializeField]
-    private float force = 100;    
+    private float force = 100;
 
     Vector3 direction;
 

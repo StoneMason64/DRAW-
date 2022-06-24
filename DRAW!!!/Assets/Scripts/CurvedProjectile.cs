@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CurvedProjectile : Projectile
 {
+    [Header("Curved Motion Properties")]
     [SerializeField]
     protected float speed = 1;
 
