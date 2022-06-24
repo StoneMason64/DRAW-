@@ -5,29 +5,35 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public Transform camera;
+    public Camera camera;
     public Transform revolver;
     public Transform tommahawk;
+    public Transform crosshair;
 
     public GameManager gameManager;
 
     [SerializeField]
     bool fireFromCamera = false;
+    [SerializeField]
+    bool showLineRenderer = false;
 
     float meleeRadius = 0.001f;
+
+    private LineRenderer line;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(showLineRenderer)
+            line = revolver.GetComponent<LineRenderer>();        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawLine(camera.position, camera.position + camera.forward * 50, Color.blue);
+        //Debug.DrawLine(camera.position, camera.position + camera.forward * 50, Color.blue);
 
-        //UseMeleeWeapon();
+        //UseMeleeWeapon();          
     }
 
     public void FireGun()
@@ -35,22 +41,32 @@ public class PlayerController : MonoBehaviour
         if (!gameManager.GameRunning)
             return;
 
-        //Debug.Log("Firing gun from position:" + revolver.position);
+        //Debug.Log("Firing gun from position:" + revolver.position);        
 
         RaycastHit hit;
         Transform fireOrigin;
 
         if (fireFromCamera)
-            fireOrigin = camera;
+            fireOrigin = camera.transform;
         else
             fireOrigin = revolver;
 
-        //Debug.DrawRay(fireOrigin.position, fireOrigin.forward, Color.blue, 3);
-        
+        if (showLineRenderer)
+        {
+            line.positionCount = 2;
+            line.SetPosition(0, fireOrigin.position);
+        }
 
-        if(Physics.Raycast(fireOrigin.position, fireOrigin.forward, out hit))
+        //Debug.DrawRay(fireOrigin.position, fireOrigin.forward, Color.blue, 1);
+
+        //Vector3 rayOrigin = camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
+        Vector3 fireDirection = (crosshair.position - fireOrigin.position).normalized;
+
+        if (Physics.Raycast(fireOrigin.position, fireDirection, out hit))
         {
             //Debug.Log("Raycast hit " + hit.transform.name);
+            if (showLineRenderer)
+                line.SetPosition(1, hit.point);
 
             var enemyObject = hit.transform.gameObject;
 
@@ -70,9 +86,20 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            if (showLineRenderer)
+                line.SetPosition(1, fireOrigin.position + (fireDirection * 50));
+        }
 
     }
 
+    public void ClearLineRenderer()
+    {
+        line.positionCount = 0;
+    }
+
+    // Not currently used
     private void UseMeleeWeapon()
     {
         Ray ray = new Ray(tommahawk.position, transform.forward);

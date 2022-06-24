@@ -33,9 +33,6 @@ public class InputManager : MonoBehaviour
 
         leftClick = new InputAction(binding: "<Mouse>/leftButton");
         leftClick.performed += ctx => onLeftClick.Invoke();
-        //{
-        //    FireGun();
-        //};
         leftClick.Enable();
 
         rightClick = new InputAction(binding: "<Mouse>/rightButton");

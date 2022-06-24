@@ -125,4 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5f1b11f4493694bbfac269584b95cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointsWhenDestroyed: 100
+  canBeShot: 1
+  destroyedByMelee: 1
   speed: 1
