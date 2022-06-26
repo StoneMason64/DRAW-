@@ -3,33 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Projectile : MonoBehaviour
+public abstract class Projectile : MonoBehaviour
 {
-    [SerializeField] 
-    protected float speed = 1;
+    [SerializeField] int pointsWhenDestroyed = 100;
 
-    [SerializeField]
-    private float force = 100;
+    [Header("Destruction Properties")]
+    [SerializeField] bool canBeShot = true;
+    [SerializeField] bool destroyedByMelee = true;
 
     protected Transform player;
     protected Rigidbody rigidbody;
 
-    Vector3 direction;
+    // properties
+    public float TimeScale { get; set; } = 1f;
+    public int Points { get => pointsWhenDestroyed; }
+
+    public bool CanBeShot { get => canBeShot; }
+    public bool DestroyedByMelee { get => destroyedByMelee; }
 
     // Start is called before the first frame update
     protected void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
-        rigidbody = GetComponent<Rigidbody>();
-        direction = (player.position - transform.position).normalized;
-
-        rigidbody.AddForce(direction * force * speed);
+        rigidbody = GetComponent<Rigidbody>();        
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player" ||
-            collision.gameObject.layer == 3)
-            GameObject.Destroy(this.gameObject);
+    {     
+        GameObject.Destroy(this.gameObject);
     }
 }

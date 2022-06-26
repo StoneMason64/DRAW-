@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4162535462164360325}
   - component: {fileID: 4162535462164360328}
   - component: {fileID: 7750147664778239248}
-  m_Layer: 0
-  m_Name: Object Fast
+  m_Layer: 6
+  m_Name: Object Slow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0157617718ca39144a2bf3d3c0dd0f69, type: 2}
+  - {fileID: 2100000, guid: 0a75382e8b6010e45829cf3fd1c87388, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122,8 +122,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4162535462164360323}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31fd75f5ddb60da44b4b88403892ba11, type: 3}
+  m_Script: {fileID: 11500000, guid: f07190e153572c24fae7190a06671477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  force: 1000
+  force: 100
