@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4149444341506915341}
   - component: {fileID: 5575052744464695834}
-  - component: {fileID: 9040420530378968262}
+  - component: {fileID: -7502280239017918688}
   m_Layer: 0
   m_Name: Q2LeftControllerPrefab
   m_TagString: MeleeWeapon
@@ -46,7 +46,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.11491584, y: 0.14701419, z: 0.12832884}
   m_Center: {x: 0.008549068, y: -0.0068247095, z: -0.020472862}
---- !u!114 &9040420530378968262
+--- !u!114 &-7502280239017918688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

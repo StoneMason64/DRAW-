@@ -9,8 +9,12 @@ public class InputManager : MonoBehaviour
     public UnityEvent onLeftClick;
     public UnityEvent onRightClick;
 
+    public UnityEvent onTiggerPressed;
+
     private InputAction leftClick;
     private InputAction rightClick;
+
+    public InputAction fireInput;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +41,9 @@ public class InputManager : MonoBehaviour
 
         rightClick = new InputAction(binding: "<Mouse>/rightButton");
         rightClick.performed += ctx => onRightClick.Invoke();
+
+        fireInput.performed += ctx => onTiggerPressed.Invoke();
+        fireInput.Enable();
     }
 
     // Update is called once per frame

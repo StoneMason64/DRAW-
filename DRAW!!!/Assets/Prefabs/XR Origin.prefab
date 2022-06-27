@@ -202,6 +202,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 8843658782342761696}
   - {fileID: 4917202189021220379}
   - {fileID: 4917202189697088562}
   - {fileID: 4917202189142401423}
@@ -238,10 +239,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 8843658782342761696}
+  m_Children: []
   m_Father: {fileID: 4917202188605764441}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &4917202189021220378
 Camera:
@@ -432,7 +432,7 @@ Transform:
   m_Children:
   - {fileID: 1311042155}
   m_Father: {fileID: 4917202188605764441}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4917202189142401411
 MonoBehaviour:
@@ -939,7 +939,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4917202188605764441}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4917202189697088566
 MonoBehaviour:
@@ -1494,6 +1494,18 @@ MonoBehaviour:
   onRightClick:
     m_PersistentCalls:
       m_Calls: []
+  onTiggerPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  fireInput:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1 &8843658782342761697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,7 +1537,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4917202189021220379}
+  m_Father: {fileID: 4917202188605764441}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8843658782342761701
@@ -1607,6 +1619,7 @@ MonoBehaviour:
   revolver: {fileID: 4917202189142401423}
   tommahawk: {fileID: 4917202189697088562}
   crosshair: {fileID: 1478982639}
+  fireIndicator: {fileID: 0}
   gameManager: {fileID: 0}
   fireFromCamera: 1
   showLineRenderer: 0

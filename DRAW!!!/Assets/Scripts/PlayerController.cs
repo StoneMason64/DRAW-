@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public Transform tommahawk;
     public Transform crosshair;
 
+    public GameObject fireIndicator;
+
     public GameManager gameManager;
 
     [SerializeField]
@@ -92,6 +94,8 @@ public class PlayerController : MonoBehaviour
                 line.SetPosition(1, fireOrigin.position + (fireDirection * 50));
         }
 
+        //StartCoroutine(ShowFireText());
+
     }
 
     public void ClearLineRenderer()
@@ -128,7 +132,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == 6)
@@ -143,5 +146,14 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.DrawWireSphere(tommahawk.position + transform.forward, meleeRadius);
     }
+
+    IEnumerator ShowFireText()
+    {
+        fireIndicator.SetActive(true);
+        yield return new WaitForSeconds(2);
+        fireIndicator.SetActive(false);
+    }
+        
+        
 
 }
