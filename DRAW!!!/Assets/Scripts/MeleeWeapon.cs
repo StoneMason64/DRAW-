@@ -11,9 +11,9 @@ public class MeleeWeapon : MonoBehaviour
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        var enemyObject = other.gameObject;
+        var enemyObject = collision.gameObject;
 
         if (enemyObject.layer == 6) // projectile layer
         {
@@ -30,6 +30,11 @@ public class MeleeWeapon : MonoBehaviour
                 Debug.Log("Object cannot be destroyed by tomahawk");
             }
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
     }
 
 }
