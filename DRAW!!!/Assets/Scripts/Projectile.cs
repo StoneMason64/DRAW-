@@ -14,6 +14,12 @@ public abstract class Projectile : MonoBehaviour
     protected Transform player;
     protected Rigidbody rigidbody;
 
+    private AudioSource audio;
+
+    [Header("Sound Effects")]
+    public AudioClip spawnSound;
+    public AudioClip destroySound;
+
     // properties
     public float TimeScale { get; set; } = 1f;
     public int Points { get => pointsWhenDestroyed; }
@@ -25,11 +31,18 @@ public abstract class Projectile : MonoBehaviour
     protected void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
-        rigidbody = GetComponent<Rigidbody>();        
+        rigidbody = GetComponent<Rigidbody>();
+
+        if (audio != null && destroySound != null)
+            audio.PlayOneShot(spawnSound);
     }
 
     private void OnCollisionEnter(Collision collision)
     {     
         GameObject.Destroy(this.gameObject);
+
+        if (audio != null && destroySound != null)
+            audio.PlayOneShot(destroySound);
     }
+   
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(CapsuleCollider))]
+[RequireComponent(typeof(AudioSource))]
 public class PlayerController : MonoBehaviour
 {
     public Camera camera;
@@ -11,7 +13,6 @@ public class PlayerController : MonoBehaviour
     public Transform crosshair;
 
     public GameObject fireIndicator;
-
     public GameManager gameManager;
 
     [SerializeField]
@@ -19,15 +20,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     bool showLineRenderer = false;
 
+    [Header("Sound effects")]
+    public AudioClip gunShotSound;
+    public AudioClip dieSound;
+
     float meleeRadius = 0.001f;
 
     private LineRenderer line;
+    private AudioSource audio;
 
     // Start is called before the first frame update
     void Start()
     {
         if(showLineRenderer)
-            line = revolver.GetComponent<LineRenderer>();        
+            line = revolver.GetComponent<LineRenderer>();
+        
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -59,6 +67,10 @@ public class PlayerController : MonoBehaviour
             line.SetPosition(0, fireOrigin.position);
         }
 
+        // play gun shot sound
+        if (audio != null && gunShotSound != null)
+            audio.PlayOneShot(gunShotSound);
+
         //Debug.DrawRay(fireOrigin.position, fireOrigin.forward, Color.blue, 1);
 
         //Vector3 rayOrigin = camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0));
@@ -78,9 +90,16 @@ public class PlayerController : MonoBehaviour
 
                 if (projectile.CanBeShot)
                 {
+                    if (audio != null && projectile.destroySound != null)
+                    {
+                        audio.PlayOneShot(projectile.destroySound);
+                    }
+
                     gameManager.AddPoints(projectile.Points);
                     GameObject.Destroy(enemyObject);
+
                     Debug.Log(enemyObject.name + "Was destroyed by revolver");
+                    
                 }
                 else
                 {
@@ -137,6 +156,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.layer == 6)
         {
             Debug.Log("Player was hit by a projectile");
+
+            if (audio != null && dieSound != null)
+                audio.PlayOneShot(dieSound);
+
             gameManager.LoseLife();
         }
 

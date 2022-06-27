@@ -23,6 +23,12 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI gameOverText;
 
+    [HeaderAttribute("Sound Effects")]
+    public AudioClip progressLevelsound;
+    public AudioClip gameOverSound;
+
+    private AudioSource audio;
+
     private int lives;
     private int score = 0;
     private int level = 1;
@@ -40,6 +46,8 @@ public class GameManager : MonoBehaviour
             gameOverText.gameObject.SetActive(false);
             GameRunning = true;
         }
+
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -69,6 +77,9 @@ public class GameManager : MonoBehaviour
             spawner.IncreaseTravelSpeed(objectSpeedIncrease);
             spawner.ReduceTimeDelay(fireRateIncrease);
         }
+
+        if (audio != null && progressLevelsound != null)
+            audio.PlayOneShot(progressLevelsound);
     }
 
     public void LoseLife()
@@ -78,6 +89,10 @@ public class GameManager : MonoBehaviour
         if (lives == 0)
         {
             gameOverText.gameObject.SetActive(true);
+
+            if (audio != null && gameOverSound != null)
+                audio.PlayOneShot(gameOverSound);
+
             GameRunning = false;
             Time.timeScale = 0;
         }
