@@ -27,7 +27,7 @@ public class PauseMenu : MonoBehaviour
        
     }
 
-    void Resume()
+    public void Resume()
     {
       pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
@@ -39,6 +39,24 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+    }
+
+    public void LoadMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("SceneMenu");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quiting Game...");
+        Application.Quit();
+    }
+
+    public void ResetTheGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        print("The button is wroking");
     }
 
 }
