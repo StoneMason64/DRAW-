@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,8 +24,11 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI livesText;
     public TextMeshProUGUI gameOverText;
 
+    [Header("Pause Menu")]
+    public GameObject menuGUI;
+
     [HeaderAttribute("Sound Effects")]
-    public AudioClip progressLevelsound;
+    public AudioClip progressLevelSound;
     public AudioClip gameOverSound;
 
     private AudioSource audio;
@@ -78,8 +82,8 @@ public class GameManager : MonoBehaviour
             spawner.ReduceTimeDelay(fireRateIncrease);
         }
 
-        if (audio != null && progressLevelsound != null)
-            audio.PlayOneShot(progressLevelsound);
+        if (audio != null && progressLevelSound != null)
+            audio.PlayOneShot(progressLevelSound);
     }
 
     public void LoseLife()
@@ -95,6 +99,41 @@ public class GameManager : MonoBehaviour
 
             GameRunning = false;
             Time.timeScale = 0;
+        }
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+    }
+
+    public void TogglePause()
+    {
+        GameRunning = !GameRunning;
+
+        if (GameRunning)
+        {
+            menuGUI.SetActive(false);
+            Time.timeScale = 1;
+
+            SetProjectileVisibility(true);
+        }
+        else
+        {
+            menuGUI.SetActive(true);
+            Time.timeScale = 0;
+
+            SetProjectileVisibility(false);
+        }
+    }
+
+    private void SetProjectileVisibility(bool visible)
+    {
+        GameObject[] projectiles = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach(GameObject projectile in projectiles)
+        {
+            projectile.GetComponent<Renderer>().enabled = visible;
         }
     }
 

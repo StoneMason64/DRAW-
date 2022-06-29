@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void ClearLineRenderer()
+    public void ReleaseGun()
     {
         line.positionCount = 0;
     }
