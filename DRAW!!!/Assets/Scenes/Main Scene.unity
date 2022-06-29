@@ -1831,6 +1831,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+--- !u!1 &1101068345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1431529431978096188, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+  m_PrefabInstance: {fileID: 1101068344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1137091374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2036,11 +2041,6 @@ PrefabInstance:
       objectReference: {fileID: 858627247}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad3c0f44dd65f3643915e5ff5fbd58d1, type: 3}
---- !u!1 &1220820296 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6810340655017928688, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
-  m_PrefabInstance: {fileID: 1101068344}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1255731040 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2714374533809587289, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
@@ -2325,7 +2325,7 @@ PrefabInstance:
     - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
       propertyPath: menuGUI
       value: 
-      objectReference: {fileID: 1220820296}
+      objectReference: {fileID: 1101068345}
     - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
       propertyPath: levelText
       value: 
