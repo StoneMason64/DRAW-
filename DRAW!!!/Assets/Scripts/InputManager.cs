@@ -9,12 +9,20 @@ public class InputManager : MonoBehaviour
     public UnityEvent onLeftClick;
     public UnityEvent onRightClick;
 
-    public UnityEvent onTiggerPressed;
+    public UnityEvent onLeftTiggerPressed;
+    public UnityEvent onLeftTiggerReleased;
+    public UnityEvent onRightTiggerPressed;
+    public UnityEvent onRightTiggerReleased;
+
+    public UnityEvent onAButton;
+    public UnityEvent onBButton;
 
     private InputAction leftClick;
     private InputAction rightClick;
 
     public InputAction fireInput;
+    public InputAction selectInput;
+    public InputAction pauseInput;
 
     // Start is called before the first frame update
     void Start()
@@ -33,17 +41,26 @@ public class InputManager : MonoBehaviour
             Debug.Log("Keyboard Detected");
         }*/
 
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
 
+        // link input actions to unity events
         leftClick = new InputAction(binding: "<Mouse>/leftButton");
-        leftClick.performed += ctx => onLeftClick.Invoke();
+        leftClick.performed += action => onLeftClick.Invoke();
         leftClick.Enable();
 
         rightClick = new InputAction(binding: "<Mouse>/rightButton");
-        rightClick.performed += ctx => onRightClick.Invoke();
+        rightClick.performed += action => onRightClick.Invoke();
+        rightClick.Enable();
 
-        fireInput.performed += ctx => onTiggerPressed.Invoke();
+        fireInput.performed += action => onRightTiggerPressed.Invoke();
+        fireInput.canceled += action => onAButton.Invoke();
         fireInput.Enable();
+
+        selectInput.performed += action => onAButton.Invoke();
+        selectInput.Enable();
+
+        pauseInput.performed += action => onBButton.Invoke();
+        pauseInput.Enable();
     }
 
     // Update is called once per frame

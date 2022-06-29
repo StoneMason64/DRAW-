@@ -149,3 +149,6 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   livesText: {fileID: 0}
   gameOverText: {fileID: 0}
+  menuGUI: {fileID: 0}
+  progressLevelsound: {fileID: 0}
+  gameOverSound: {fileID: 0}

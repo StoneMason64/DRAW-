@@ -26,9 +26,12 @@ public class GUIController : MonoBehaviour
     {
         if (Physics.Raycast(camera.position, camera.forward, out hit, maxCastDiscatance, 5)) // 5 = UI Layer
         {
-            Debug.Log("Clicked on " + hit.transform.name);
-            //Button selected = hit.transform.GetComponent<Button>();
-            //selected.onClick.Invoke();
+            if (hit.transform.gameObject.layer == 5)
+            {
+                Debug.Log("Clicked on " + hit.transform.name);
+                //Button selected = hit.transform.GetComponent<Button>();
+                //selected.onClick.Invoke();
+            }
         }
     }
 

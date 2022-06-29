@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7750147664778239248}
   m_Layer: 6
   m_Name: Object Medium
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,4 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f07190e153572c24fae7190a06671477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointsWhenDestroyed: 100
+  canBeShot: 1
+  destroyedByMelee: 1
+  spawnSound: {fileID: 0}
+  destroySound: {fileID: 0}
   force: 100
