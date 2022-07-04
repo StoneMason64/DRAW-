@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [Range(1, 10)]
     [SerializeField] int startingLives = 5;
     [Range(1, 1000)]
-    [SerializeField] int pointsPerLevel = 500;
+    [SerializeField] int pointsPerLevel = 500;    
     [SerializeField] ObjectSpawner[] spawners;
 
     [Header("% Adjustments Per level")]
@@ -30,6 +30,12 @@ public class GameManager : MonoBehaviour
     [Header("Sound Effects")]
     public AudioClip progressLevelSound;
     public AudioClip gameOverSound;
+    public AudioClip level3Sound;
+    public AudioClip level6Sound;
+    public AudioClip level9Sound;
+    public AudioClip[] speeches;
+    [Range(0, 1)]
+    [SerializeField] float speechFrequency = 0.5f;
 
     [Header("Device Simulation")]
     public GameObject xrSimulator;
@@ -91,8 +97,18 @@ public class GameManager : MonoBehaviour
             spawner.ReduceTimeDelay(fireRateIncrease);
         }
 
-        if (audio != null && progressLevelSound != null)
-            audio.PlayOneShot(progressLevelSound);
+        // play level up sound
+        if (audio != null)
+        {
+            if (level == 3 && level3Sound != null)
+                audio.PlayOneShot(level3Sound);
+            else if (level == 6 && level6Sound != null)
+                audio.PlayOneShot(level6Sound);
+            else if (level == 9 && level9Sound != null)
+                audio.PlayOneShot(level9Sound);
+            else if (progressLevelSound != null)
+                audio.PlayOneShot(progressLevelSound);
+        }
     }
 
     public void LoseLife()
@@ -134,6 +150,22 @@ public class GameManager : MonoBehaviour
 
             SetProjectileVisibility(false);
         }
+    }
+
+    public void PlayRandomSpeech()
+    {
+        if(speeches.Length > 0)
+        {
+            float chance = Random.value;
+            Debug.Log("Random value: " + chance);
+
+            if (chance <= speechFrequency)
+            {
+                int randomSpeech = Random.Range(0, speeches.Length);
+                audio.PlayOneShot(speeches[randomSpeech]);
+            }
+        }        
+
     }
 
     private void SetProjectileVisibility(bool visible)

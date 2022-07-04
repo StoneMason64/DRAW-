@@ -1250,7 +1250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851926, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: player
@@ -1260,6 +1260,10 @@ PrefabInstance:
       propertyPath: showPath
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 938094364}
     - target: {fileID: 597572365520851927, guid: 61de4f0c5465fcf449e9d48d37e8657c, type: 3}
       propertyPath: throwHeight
       value: 2
@@ -1310,6 +1314,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1562069060}
     - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: level3Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f99bbb78a6c9d74d87a8a7d1abbfa31, type: 3}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: level6Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: c1bf99ce1dfcf02488dc8c75ddafd41c, type: 3}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: level9Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0bd6b039400bc434a92dfe352c913ab9, type: 3}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
       propertyPath: xrSimulator
       value: 
       objectReference: {fileID: 424697981}
@@ -1317,6 +1333,26 @@ PrefabInstance:
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 633987596}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: gameOverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 72e8475d994cf8c46827ba31bea62920, type: 3}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: speechFrequency
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: progressLevelSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: spawners.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: speeches.Array.size
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
       propertyPath: spawners.Array.data[0]
       value: 
@@ -1333,6 +1369,58 @@ PrefabInstance:
       propertyPath: spawners.Array.data[3]
       value: 
       objectReference: {fileID: 1940833510}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: speeches.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4289a179d11ee7e4d9ecbb6ebf842008, type: 3}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: speeches.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: a6ec4df3d0abf54499b4b3b8cacfb84f, type: 3}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: speeches.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: cbb65512ab87d69418930698d4d164c8, type: 3}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: speeches.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c53d587414177a4ea49a98da005ae23, type: 3}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: speeches.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 300b7fa281f31494fa76957c3cce7612, type: 3}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: speeches.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 4428dff10724609458d392aab46cc8a7, type: 3}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: speeches.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: c6f9a8f9e14a2ca4abc7d8ddb8f5ce48, type: 3}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: speeches.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: ebff4875015329749a16ef0b7a8577da, type: 3}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: speeches.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a65b53d450fb4f4a82db409d192014f, type: 3}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: speeches.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: d9b7d07048048d248a284910f24dc29c, type: 3}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: speeches.Array.data[10]
+      value: 
+      objectReference: {fileID: 8300000, guid: d51dc105d9ffd5041a36e4c723abf2e5, type: 3}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: speeches.Array.data[11]
+      value: 
+      objectReference: {fileID: 8300000, guid: f2da27b6137358c4ca607ad99ba32f28, type: 3}
+    - target: {fileID: 2716104267198978602, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
+      propertyPath: speeches.Array.data[12]
+      value: 
+      objectReference: {fileID: 8300000, guid: 43b6609a61c85a246a215d79ab7ad453, type: 3}
     - target: {fileID: 2716104267198978603, guid: 932bbfed8034b8f4292d1c8343976922, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1402,6 +1490,26 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 938094364}
+    - target: {fileID: 1723992945, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: ricochetSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 2996df75228a2e84aadd3758e44c106c, type: 3}
+    - target: {fileID: 1723992945, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: ricochetSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723992945, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: ricochetSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a3de3e1f5d72ac4cb77b8d8526a85e0, type: 3}
+    - target: {fileID: 1723992945, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: ricochetSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2996df75228a2e84aadd3758e44c106c, type: 3}
+    - target: {fileID: 1723992945, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: ricochetSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 35444784a7c70324fbed35fbaccda291, type: 3}
     - target: {fileID: 4917202189142401410, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -1457,6 +1565,10 @@ PrefabInstance:
     - target: {fileID: 4917202189893863774, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
       propertyPath: m_Name
       value: XR Origin
+      objectReference: {fileID: 0}
+    - target: {fileID: 8843658782342761697, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}

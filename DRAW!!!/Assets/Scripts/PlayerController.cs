@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Sound effects")]
     public AudioClip gunShotSound;
+    public AudioClip[] ricochetSounds;
     public AudioClip dieSound;
 
     float meleeRadius = 0.001f;
@@ -98,13 +99,25 @@ public class PlayerController : MonoBehaviour
                     gameManager.AddPoints(projectile.Points);
                     GameObject.Destroy(enemyObject);
 
-                    Debug.Log(enemyObject.name + "Was destroyed by revolver");
+                    //Debug.Log(enemyObject.name + "Was destroyed by revolver");
                     
                 }
                 else
                 {
                     Debug.Log("Object cannot be shot");
+
+                    if (ricochetSounds != null)
+                    {
+                        int random = Random.Range(0, ricochetSounds.Length);
+                        audio.PlayOneShot(ricochetSounds[random]);
+                    }
+                        
                 }
+            }
+            else if(ricochetSounds != null)
+            {
+                int random = Random.Range(0,ricochetSounds.Length);
+                audio.PlayOneShot(ricochetSounds[random]);
             }
         }
         else

@@ -225,6 +225,6 @@ MonoBehaviour:
   pointsWhenDestroyed: 100
   canBeShot: 1
   destroyedByMelee: 1
-  spawnSound: {fileID: 0}
-  destroySound: {fileID: 0}
+  spawnSound: {fileID: 8300000, guid: 65d2758111c9248498955da62ccf6d70, type: 3}
+  destroySound: {fileID: 8300000, guid: 230d1c63827fbdb43a2fc690ee38e7dd, type: 3}
   speed: 1

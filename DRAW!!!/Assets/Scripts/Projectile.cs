@@ -33,16 +33,18 @@ public abstract class Projectile : MonoBehaviour
         player = GameObject.FindWithTag("Player").transform;
         rigidbody = GetComponent<Rigidbody>();
 
-        if (audio != null && destroySound != null)
+        audio = GetComponent<AudioSource>();
+
+        if (audio != null && spawnSound != null)
             audio.PlayOneShot(spawnSound);
     }
 
     private void OnCollisionEnter(Collision collision)
-    {     
-        GameObject.Destroy(this.gameObject);
-
+    {       
         if (audio != null && destroySound != null)
             audio.PlayOneShot(destroySound);
+
+        GameObject.Destroy(this.gameObject);
     }
    
 }

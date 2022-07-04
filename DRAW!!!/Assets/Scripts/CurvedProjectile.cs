@@ -18,8 +18,7 @@ public class CurvedProjectile : Projectile
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("Player").transform;
-        rigidbody = GetComponent<Rigidbody>();
+        base.Start();
         //rigidbody.velocity = CalculateLaunchData().initialVelocity;
 
         launchData = CalculateLaunchData();
