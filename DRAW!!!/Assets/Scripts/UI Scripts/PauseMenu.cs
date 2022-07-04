@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
+
 public class PauseMenu : MonoBehaviour
 {
 
@@ -13,7 +15,7 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
         //Change later to incorperate Ocules Controls
-        /*if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
             {
@@ -23,7 +25,7 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
             }
-        }*/
+        }
        
     }
 
