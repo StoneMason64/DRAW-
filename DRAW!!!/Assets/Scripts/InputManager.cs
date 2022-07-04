@@ -21,6 +21,7 @@ public class InputManager : MonoBehaviour
     private InputAction rightClick;
 
     public InputAction fireInput;
+    public InputAction fireRelease;
     public InputAction selectInput;
     public InputAction pauseInput;
 
@@ -53,7 +54,7 @@ public class InputManager : MonoBehaviour
         rightClick.Enable();
 
         fireInput.performed += action => onRightTiggerPressed.Invoke();
-        fireInput.canceled += action => onAButton.Invoke();
+        fireInput.canceled += action => onRightTiggerReleased.Invoke();
         fireInput.Enable();
 
         selectInput.performed += action => onAButton.Invoke();
