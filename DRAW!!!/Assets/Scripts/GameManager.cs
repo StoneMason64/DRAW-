@@ -27,9 +27,12 @@ public class GameManager : MonoBehaviour
     [Header("Pause Menu")]
     public GameObject menuGUI;
 
-    [HeaderAttribute("Sound Effects")]
+    [Header("Sound Effects")]
     public AudioClip progressLevelSound;
     public AudioClip gameOverSound;
+
+    [Header("Device Simulation")]
+    public GameObject xrSimulator;
 
     private AudioSource audio;
 
@@ -52,6 +55,12 @@ public class GameManager : MonoBehaviour
         }
 
         audio = GetComponent<AudioSource>();
+
+#if UNITY_EDITOR
+        xrSimulator.SetActive(true);
+#else
+        xrSimulator.SetActive(false);
+#endif
     }
 
     // Update is called once per frame
