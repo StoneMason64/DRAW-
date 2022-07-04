@@ -6,62 +6,67 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    public UnityEvent onLeftClick;
-    public UnityEvent onRightClick;
+    [Header("Mouse Options")]
+    public bool lockMouseCursor = true;
 
-    public UnityEvent onLeftTiggerPressed;
-    public UnityEvent onLeftTiggerReleased;
-    public UnityEvent onRightTiggerPressed;
-    public UnityEvent onRightTiggerReleased;
+    [Header("Events")]
+    [Space]
+    public UnityEvent onLeftTriggerPressed;
+    public UnityEvent onLeftTriggerReleased;
+    public UnityEvent onRightTriggerPressed;
+    public UnityEvent onRightTriggerReleased;
 
     public UnityEvent onAButton;
     public UnityEvent onBButton;
+    public UnityEvent onXButton;
+    public UnityEvent onYButton;
 
-    private InputAction leftClick;
-    private InputAction rightClick;
+    [Header("Right Trigger")]    
+    [Space]
+    [Header("Input Mapping")]
+    public InputAction rightTrigger;
+    [Header("A Button")]
+    public InputAction rightPrimary;
+    [Header("B Button")]
+    public InputAction rightSecondary;
 
-    public InputAction fireInput;
-    public InputAction fireRelease;
-    public InputAction selectInput;
-    public InputAction pauseInput;
+    [Space]
+    [Header("Left Trigger")]
+    public InputAction leftTrigger;
+    [Header("X Button")]
+    public InputAction leftPrimary;
+    [Header("Y Button")]
+    public InputAction leftSecondary;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        /*
-        var mouse = Mouse.current;
-
-        if (mouse != null)
-        {
-            Debug.Log("Mouse Has been detected.");
-        }*/
-
-        /*var keybaord = Keyboard.current;
-        if(keybaord != null)
-        {
-            Debug.Log("Keyboard Detected");
-        }*/
-
-        //Cursor.lockState = CursorLockMode.Locked;
+        if(lockMouseCursor)
+            Cursor.lockState = CursorLockMode.Locked;
+        else
+            Cursor.lockState = CursorLockMode.None;
 
         // link input actions to unity events
-        leftClick = new InputAction(binding: "<Mouse>/leftButton");
-        leftClick.performed += action => onLeftClick.Invoke();
-        leftClick.Enable();
+        rightTrigger.performed += action => onRightTriggerPressed.Invoke();
+        rightTrigger.canceled += action => onRightTriggerReleased.Invoke();
+        rightTrigger.Enable();
 
-        rightClick = new InputAction(binding: "<Mouse>/rightButton");
-        rightClick.performed += action => onRightClick.Invoke();
-        rightClick.Enable();
+        rightPrimary.performed += action => onAButton.Invoke();
+        rightPrimary.Enable();
 
-        fireInput.performed += action => onRightTiggerPressed.Invoke();
-        fireInput.canceled += action => onRightTiggerReleased.Invoke();
-        fireInput.Enable();
+        rightSecondary.performed += action => onBButton.Invoke();
+        rightSecondary.Enable();
 
-        selectInput.performed += action => onAButton.Invoke();
-        selectInput.Enable();
+        leftTrigger.performed += action => onLeftTriggerPressed.Invoke();
+        leftTrigger.canceled += action => onLeftTriggerReleased.Invoke();
+        leftTrigger.Enable();
 
-        pauseInput.performed += action => onBButton.Invoke();
-        pauseInput.Enable();
+        leftPrimary.performed += action => onXButton.Invoke();
+        leftPrimary.Enable();
+
+        leftSecondary.performed += action => onYButton.Invoke();
+        leftSecondary.Enable();
     }
 
     // Update is called once per frame
