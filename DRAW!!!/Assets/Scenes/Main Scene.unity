@@ -1011,9 +1011,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1604986395}
     - target: {fileID: 1723992945, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: dieSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 72e8475d994cf8c46827ba31bea62920, type: 3}
+    - target: {fileID: 1723992945, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1604986395}
+    - target: {fileID: 1723992945, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: gunShotSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 1139c179e265406409e3fa31b8ab17ed, type: 3}
     - target: {fileID: 4917202188605764441, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1

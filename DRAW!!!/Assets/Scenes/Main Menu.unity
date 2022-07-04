@@ -451,6 +451,15 @@ MonoBehaviour:
       m_Action: Fire Input
       m_Flags: 0
     m_Flags: 0
+  fireRelease:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
   selectInput:
     m_Name: Select Input
     m_Type: 0
@@ -706,7 +715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1345035733800094777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1279,7 +1288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!120 &1345035734321287554
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2212,6 +2221,15 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Fire Input
       m_Flags: 0
+    m_Flags: 0
+  fireRelease:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
     m_Flags: 0
   selectInput:
     m_Name: Select Input
