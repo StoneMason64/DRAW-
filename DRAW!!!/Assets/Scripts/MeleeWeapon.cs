@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MeleeWeapon : MonoBehaviour
 {
+    //public AudioClip collisionSound;
+
+    AudioSource audio;
+
     GameManager gameManager;
 
     private void Awake()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        audio = GetComponent<AudioSource>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -23,7 +29,10 @@ public class MeleeWeapon : MonoBehaviour
             {
                 gameManager.AddPoints(projectile.Points);
                 GameObject.Destroy(enemyObject);
-                Debug.Log(enemyObject.name + "Was destroyed by tomahawk");
+                ///Debug.Log(enemyObject.name + "Was destroyed by tomahawk"); 
+                
+                if(audio != null)
+                    audio.Play();
             }
             else
             {

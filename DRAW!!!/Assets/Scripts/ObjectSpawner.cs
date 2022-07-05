@@ -6,6 +6,7 @@ using UnityEngine;
 public class ObjectSpawner : MonoBehaviour
 {
     #region variable delcaration
+    public GameManager gameManager;
     public GameObject objectToSpawn;
 
     [SerializeField][Range(0.1f, 30f)]
@@ -97,6 +98,8 @@ public class ObjectSpawner : MonoBehaviour
 
         if (projectile.GetType().Equals(typeof(CurvedProjectile)))
             ((CurvedProjectile)projectile).ThrowHeight = throwHeight;
+
+        gameManager.PlayRandomSpeech();
 
         Invoke("SpawnObject", timeBetweenSpawns * delayScale);
     }

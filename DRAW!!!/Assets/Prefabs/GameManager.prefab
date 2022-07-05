@@ -43,7 +43,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -142,7 +142,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingLives: 3
   pointsPerLevel: 500
-  spawners: []
+  spawners:
+  - {fileID: 0}
   objectSpeedIncrease: 3
   fireRateIncrease: 3
   levelText: {fileID: 0}
@@ -150,5 +151,24 @@ MonoBehaviour:
   livesText: {fileID: 0}
   gameOverText: {fileID: 0}
   menuGUI: {fileID: 0}
-  progressLevelsound: {fileID: 0}
-  gameOverSound: {fileID: 0}
+  progressLevelSound: {fileID: 0}
+  gameOverSound: {fileID: 8300000, guid: 72e8475d994cf8c46827ba31bea62920, type: 3}
+  level3Sound: {fileID: 8300000, guid: 8f99bbb78a6c9d74d87a8a7d1abbfa31, type: 3}
+  level6Sound: {fileID: 8300000, guid: c1bf99ce1dfcf02488dc8c75ddafd41c, type: 3}
+  level9Sound: {fileID: 8300000, guid: 0bd6b039400bc434a92dfe352c913ab9, type: 3}
+  speeches:
+  - {fileID: 8300000, guid: 4289a179d11ee7e4d9ecbb6ebf842008, type: 3}
+  - {fileID: 8300000, guid: a6ec4df3d0abf54499b4b3b8cacfb84f, type: 3}
+  - {fileID: 8300000, guid: cbb65512ab87d69418930698d4d164c8, type: 3}
+  - {fileID: 8300000, guid: 3c53d587414177a4ea49a98da005ae23, type: 3}
+  - {fileID: 8300000, guid: 300b7fa281f31494fa76957c3cce7612, type: 3}
+  - {fileID: 8300000, guid: 4428dff10724609458d392aab46cc8a7, type: 3}
+  - {fileID: 8300000, guid: c6f9a8f9e14a2ca4abc7d8ddb8f5ce48, type: 3}
+  - {fileID: 8300000, guid: ebff4875015329749a16ef0b7a8577da, type: 3}
+  - {fileID: 8300000, guid: 9a65b53d450fb4f4a82db409d192014f, type: 3}
+  - {fileID: 8300000, guid: d9b7d07048048d248a284910f24dc29c, type: 3}
+  - {fileID: 8300000, guid: d51dc105d9ffd5041a36e4c723abf2e5, type: 3}
+  - {fileID: 8300000, guid: f2da27b6137358c4ca607ad99ba32f28, type: 3}
+  - {fileID: 8300000, guid: 43b6609a61c85a246a215d79ab7ad453, type: 3}
+  speechFrequency: 0.5
+  xrSimulator: {fileID: 0}

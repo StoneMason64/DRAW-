@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,10 +12,19 @@ public class PlayerController : MonoBehaviour
     public Transform revolver;
     public Transform tommahawk;
     public Transform crosshair;
+    public TextMeshProUGUI ammoValue;
 
-    public GameObject fireIndicator;
+    //public GameObject fireIndicator;
     public GameManager gameManager;
 
+    [Header("Gun Variables")]
+    [Range(1, 50)]
+    [SerializeField] int maxShots = 6;
+    [Range(0, 10)]
+    [SerializeField] float reloadTime = 3;
+
+    [Space]
+    [Header("Options")]
     [SerializeField]
     bool fireFromCamera = false;
     [SerializeField]
@@ -22,9 +32,12 @@ public class PlayerController : MonoBehaviour
 
     [Header("Sound effects")]
     public AudioClip gunShotSound;
+    public AudioClip reloadSound;
+    public AudioClip[] ricochetSounds;
     public AudioClip dieSound;
 
-    float meleeRadius = 0.001f;
+    //float meleeRadius = 0.001f;
+    private int shotsLeft;
 
     private LineRenderer line;
     private AudioSource audio;
@@ -36,6 +49,9 @@ public class PlayerController : MonoBehaviour
             line = revolver.GetComponent<LineRenderer>();
         
         audio = GetComponent<AudioSource>();
+
+        shotsLeft = maxShots;
+        ammoValue.text = shotsLeft.ToString();
     }
 
     // Update is called once per frame
@@ -48,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
     public void FireGun()
     {
-        if (!gameManager.GameRunning)
+        if (!gameManager.GameRunning || shotsLeft <= 0)
             return;
 
         //Debug.Log("Firing gun from position:" + revolver.position);        
@@ -98,13 +114,25 @@ public class PlayerController : MonoBehaviour
                     gameManager.AddPoints(projectile.Points);
                     GameObject.Destroy(enemyObject);
 
-                    Debug.Log(enemyObject.name + "Was destroyed by revolver");
+                    //Debug.Log(enemyObject.name + "Was destroyed by revolver");
                     
                 }
                 else
                 {
                     Debug.Log("Object cannot be shot");
+
+                    if (ricochetSounds != null)
+                    {
+                        int random = Random.Range(0, ricochetSounds.Length);
+                        audio.PlayOneShot(ricochetSounds[random]);
+                    }
+                        
                 }
+            }
+            else if(ricochetSounds != null)
+            {
+                int random = Random.Range(0,ricochetSounds.Length);
+                audio.PlayOneShot(ricochetSounds[random]);
             }
         }
         else
@@ -113,16 +141,38 @@ public class PlayerController : MonoBehaviour
                 line.SetPosition(1, fireOrigin.position + (fireDirection * 50));
         }
 
+        shotsLeft--;
+        //Debug.Log("Shots Left: " + shotsLeft);
+        ammoValue.text = shotsLeft.ToString();
+
+        if (shotsLeft == 0)
+            StartCoroutine(ReloadGun());
+
         //StartCoroutine(ShowFireText());
 
-    }
+    }    
 
     public void ReleaseGun()
     {
         line.positionCount = 0;
     }
 
+    IEnumerator ReloadGun()
+    {
+        if (reloadSound != null)
+            audio.PlayOneShot(reloadSound);
+
+        yield return new WaitForSeconds(reloadTime);
+        shotsLeft = maxShots;
+        audio.Stop();
+
+        //Debug.Log("Gun Reloaded");
+        //Debug.Log("Shots Left: " + shotsLeft);
+        ammoValue.text = shotsLeft.ToString();
+    }
+
     // Not currently used
+    /*
     private void UseMeleeWeapon()
     {
         Ray ray = new Ray(tommahawk.position, transform.forward);
@@ -149,7 +199,7 @@ public class PlayerController : MonoBehaviour
 
             }
         }
-    }
+    }*/
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -167,16 +217,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(tommahawk.position + transform.forward, meleeRadius);
+        //Gizmos.DrawWireSphere(tommahawk.position + transform.forward, meleeRadius);
     }
 
+    /*
     IEnumerator ShowFireText()
     {
         fireIndicator.SetActive(true);
         yield return new WaitForSeconds(2);
         fireIndicator.SetActive(false);
-    }
-        
+    }*/        
         
 
 }
