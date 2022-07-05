@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour
     [Header("Pause Menu")]
     public GameObject menuGUI;
 
-    [Header("Sound Effects")]
+    [Header("Sounds")]
+    public AudioClip musicLoop;
     public AudioClip progressLevelSound;
     public AudioClip gameOverSound;
     public AudioClip level3Sound;
@@ -40,12 +41,13 @@ public class GameManager : MonoBehaviour
     [Header("Device Simulation")]
     public GameObject xrSimulator;
 
-    private AudioSource audio;
+    private AudioSource soundEffects;
+    private AudioSource music;
 
     private int lives;
     private int score = 0;
     private int level = 1;
-    private int levelPoints; // number of points since the last level
+    private int levelPoints; // number of points since the last level    
 
     public bool GameRunning { get; private set; }
 
@@ -60,7 +62,10 @@ public class GameManager : MonoBehaviour
             GameRunning = true;
         }
 
-        audio = GetComponent<AudioSource>();
+        var audio = GetComponents<AudioSource>();
+        soundEffects = audio[0];
+        music = audio[1];
+
 
 #if UNITY_EDITOR
         xrSimulator.SetActive(true);
@@ -76,6 +81,14 @@ public class GameManager : MonoBehaviour
         levelText.text = level.ToString();
         scoreText.text = score.ToString();
         livesText.text = lives.ToString();
+
+        if(GameRunning && music != null && !music.isPlaying)
+        {
+            music.clip = musicLoop;
+            music.loop = true;
+            music.Play();
+        }
+        
     }
     
     public void AddPoints(int amount)
@@ -98,16 +111,16 @@ public class GameManager : MonoBehaviour
         }
 
         // play level up sound
-        if (audio != null)
+        if (soundEffects != null)
         {
             if (level == 3 && level3Sound != null)
-                audio.PlayOneShot(level3Sound);
+                soundEffects.PlayOneShot(level3Sound);
             else if (level == 6 && level6Sound != null)
-                audio.PlayOneShot(level6Sound);
+                soundEffects.PlayOneShot(level6Sound);
             else if (level == 9 && level9Sound != null)
-                audio.PlayOneShot(level9Sound);
+                soundEffects.PlayOneShot(level9Sound);
             else if (progressLevelSound != null)
-                audio.PlayOneShot(progressLevelSound);
+                soundEffects.PlayOneShot(progressLevelSound);
         }
     }
 
@@ -119,8 +132,13 @@ public class GameManager : MonoBehaviour
         {
             gameOverText.gameObject.SetActive(true);
 
-            if (audio != null && gameOverSound != null)
-                audio.PlayOneShot(gameOverSound);
+            if (music != null && gameOverSound != null)
+            {
+                music.Stop();
+                music.loop = false;
+                music.clip = gameOverSound;
+                music.Play();
+            }
 
             GameRunning = false;
             Time.timeScale = 0;
@@ -162,7 +180,7 @@ public class GameManager : MonoBehaviour
             if (chance <= speechFrequency)
             {
                 int randomSpeech = Random.Range(0, speeches.Length);
-                audio.PlayOneShot(speeches[randomSpeech]);
+                soundEffects.PlayOneShot(speeches[randomSpeech]);
             }
         }        
 

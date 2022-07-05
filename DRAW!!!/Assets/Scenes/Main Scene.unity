@@ -1006,6 +1006,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 61957698, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: playTitleMusic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61957698, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: titleMusicLoop
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
       propertyPath: onBButton.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1209,6 +1217,10 @@ PrefabInstance:
     - target: {fileID: 4917202189893863774, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
       propertyPath: m_Name
       value: XR Origin
+      objectReference: {fileID: 0}
+    - target: {fileID: 4917202189893863775, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: m_RequestedTrackingOriginMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
