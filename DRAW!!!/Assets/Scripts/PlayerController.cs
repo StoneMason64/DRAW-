@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     //public GameObject fireIndicator;
     public GameManager gameManager;
 
+    [SerializeField] Vector3 offsetFromCamera = new Vector3(0, 0, -1);
+
     [Header("Gun Variables")]
     [Range(1, 50)]
     [SerializeField] int maxShots = 6;
@@ -58,8 +60,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Debug.DrawLine(camera.position, camera.position + camera.forward * 50, Color.blue);
+        //UseMeleeWeapon();
 
-        //UseMeleeWeapon();          
+        transform.position = new Vector3(camera.transform.position.x + offsetFromCamera.x,
+            offsetFromCamera.y, camera.transform.position.z + offsetFromCamera.z);
+
     }
 
     public void FireGun()
