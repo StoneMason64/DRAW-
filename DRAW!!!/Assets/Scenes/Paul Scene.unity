@@ -1483,33 +1483,93 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onBButton.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onBButton.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
       propertyPath: onBButton.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 938094364}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onRightTriggerPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onRightTriggerReleased.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onBButton.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onBButton.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TogglePause
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onRightTriggerPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onRightTriggerReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onRightTriggerPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8843658782360801540}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onRightTriggerReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8843658782360801540}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onRightTriggerPressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onBButton.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onRightTriggerPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FireGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onRightTriggerReleased.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onRightTriggerReleased.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReleaseGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onRightTriggerPressed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onRightTriggerReleased.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onBButton.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onRightTriggerPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 89893254, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+      propertyPath: onRightTriggerReleased.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1723992945, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 938094364}
-    - target: {fileID: 1723992945, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
-      propertyPath: ricochetSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 2996df75228a2e84aadd3758e44c106c, type: 3}
-    - target: {fileID: 1723992945, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
-      propertyPath: ricochetSounds.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1723992945, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
-      propertyPath: ricochetSounds.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 8a3de3e1f5d72ac4cb77b8d8526a85e0, type: 3}
-    - target: {fileID: 1723992945, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
-      propertyPath: ricochetSounds.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 2996df75228a2e84aadd3758e44c106c, type: 3}
-    - target: {fileID: 1723992945, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
-      propertyPath: ricochetSounds.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 35444784a7c70324fbed35fbaccda291, type: 3}
     - target: {fileID: 4917202189142401410, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
       propertyPath: m_InteractionManager
       value: 
@@ -1566,9 +1626,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin
       objectReference: {fileID: 0}
-    - target: {fileID: 8843658782342761697, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+--- !u!114 &8843658782360801540 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1723992945, guid: 3ab9bc6a8b7e6a243acc291dc28a4bfd, type: 3}
+  m_PrefabInstance: {fileID: 8843658782360801539}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d9608acc0cfbba47a3e591f497501e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

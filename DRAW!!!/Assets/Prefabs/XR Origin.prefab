@@ -1304,48 +1304,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 098eb03cde8c6be44aa45faa1cd941b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onLeftClick:
+  lockMouseCursor: 1
+  onLeftTriggerPressed:
     m_PersistentCalls:
       m_Calls: []
-  onRightClick:
+  onLeftTriggerReleased:
     m_PersistentCalls:
       m_Calls: []
-  onLeftTiggerPressed:
+  onRightTriggerPressed:
     m_PersistentCalls:
       m_Calls: []
-  onLeftTiggerReleased:
+  onRightTriggerReleased:
     m_PersistentCalls:
       m_Calls: []
-  onRightTiggerPressed:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1723992945}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: FireGun
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onRightTiggerReleased:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1723992945}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: ReleaseGun
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   onAButton:
     m_PersistentCalls:
       m_Calls:
@@ -1363,93 +1334,161 @@ MonoBehaviour:
         m_CallState: 2
   onBButton:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: TogglePause
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  fireInput:
-    m_Name: Fire Input
+      m_Calls: []
+  onXButton:
+    m_PersistentCalls:
+      m_Calls: []
+  onYButton:
+    m_PersistentCalls:
+      m_Calls: []
+  rightTrigger:
+    m_Name: Right Trigger
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 92a3a118-7e82-419a-86be-a866ca1d887d
+    m_Id: 04217563-3f27-4ba3-9a16-0b9624dde08e
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: c1f266bd-ea64-411f-be1e-6b6da8bfa3b5
+      m_Id: 03ca77fc-6fe1-4afe-9dd2-4586b42b8ecf
       m_Path: <XRController>{RightHand}/triggerPressed
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Fire Input
+      m_Action: Right Trigger
       m_Flags: 0
     - m_Name: 
-      m_Id: 103d5593-2957-4d83-b329-59dbc211e12b
+      m_Id: 5269588f-a16b-4c3a-937b-a20522b7c336
       m_Path: <Mouse>/leftButton
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Fire Input
+      m_Action: Right Trigger
       m_Flags: 0
     m_Flags: 0
-  fireRelease:
-    m_Name: Fire Release
+  rightPrimary:
+    m_Name: Right Primary
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: e4a34c93-94c4-4de3-857b-44f8a560e26c
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  selectInput:
-    m_Name: Select Input
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 5a4fe387-ee4a-4b0a-91ad-2ca2f83f4e4e
+    m_Id: c3affc81-9889-46bb-acf2-ed45f58d789c
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 384708fe-3cea-4c1b-8cb3-8618aa2dc038
-      m_Path: <XRController>{RightHand}/primaryButton
+      m_Id: 438d92e9-4090-4b5e-958f-e30c93cbb0cd
+      m_Path: <XRSimulatedController>/primaryButton
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Select Input
+      m_Action: Right Primary
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 9df1339a-0ca9-4053-9a7c-7e38d53e1569
+      m_Path: <Keyboard>/enter
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Right Primary
       m_Flags: 0
     m_Flags: 0
-  pauseInput:
-    m_Name: Pause Input
+  rightSecondary:
+    m_Name: Right Secondary
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: e2ae2894-e766-4317-9a32-cb4145365be0
+    m_Id: e78ed614-f23a-4b25-b234-1de3b954ad06
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 1f91524b-8392-4fab-a571-73dba2d46c29
+      m_Id: 58deaddc-705b-4f45-8c2e-ae87612c70c7
       m_Path: <XRController>{RightHand}/secondaryButton
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Pause Input
+      m_Action: Right Secondary
       m_Flags: 0
     - m_Name: 
-      m_Id: 63362353-7c7e-448f-b336-b59588036323
+      m_Id: 1006fd37-7bf6-4f29-a4f9-51036bc46dd3
       m_Path: <Keyboard>/escape
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Pause Input
+      m_Action: Right Secondary
+      m_Flags: 0
+    m_Flags: 0
+  leftTrigger:
+    m_Name: Left Trigger
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 15b0066f-8bcf-46b2-96f3-5b7efda24f0a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 4c6d3f9a-208c-451a-94f0-e2d69c82ae15
+      m_Path: <XRSimulatedController>{LeftHand}/triggerButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Left Trigger
+      m_Flags: 0
+    - m_Name: 
+      m_Id: e61d98a9-8eb4-4d05-a870-2403e16e195e
+      m_Path: <Mouse>/rightButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Left Trigger
+      m_Flags: 0
+    m_Flags: 0
+  leftPrimary:
+    m_Name: Left Primary
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f5034760-15fb-4156-aba6-e6acad68fb7e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 9ee8352e-4bc6-43be-ad61-e5bd8f130b94
+      m_Path: <XRController>{LeftHand}/primaryButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Left Primary
+      m_Flags: 0
+    - m_Name: 
+      m_Id: c130b8e5-27f6-4885-856a-9df54d158b70
+      m_Path: <Keyboard>/x
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Left Primary
+      m_Flags: 0
+    m_Flags: 0
+  leftSecondary:
+    m_Name: Left Secondary
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9014b261-8bbe-425c-98cc-b430e13fccde
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: d526dd27-1b9f-43fd-ae00-b603c1827767
+      m_Path: <XRController>{LeftHand}/secondaryButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Left Secondary
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 15f15218-b75e-4b09-a65a-2d76c6810bf9
+      m_Path: <Keyboard>/y
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Left Secondary
       m_Flags: 0
     m_Flags: 0
 --- !u!114 &61957698
@@ -1500,6 +1539,22 @@ PrefabInstance:
       propertyPath: showLineRenderer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 836324044930659407, guid: e57b940421926264784c9b121edb3967, type: 3}
+      propertyPath: ricochetSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 836324044930659407, guid: e57b940421926264784c9b121edb3967, type: 3}
+      propertyPath: ricochetSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a3de3e1f5d72ac4cb77b8d8526a85e0, type: 3}
+    - target: {fileID: 836324044930659407, guid: e57b940421926264784c9b121edb3967, type: 3}
+      propertyPath: ricochetSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2996df75228a2e84aadd3758e44c106c, type: 3}
+    - target: {fileID: 836324044930659407, guid: e57b940421926264784c9b121edb3967, type: 3}
+      propertyPath: ricochetSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 35444784a7c70324fbed35fbaccda291, type: 3}
     - target: {fileID: 8152012885786784734, guid: e57b940421926264784c9b121edb3967, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1548,6 +1603,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8152012885786784735, guid: e57b940421926264784c9b121edb3967, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e57b940421926264784c9b121edb3967, type: 3}
 --- !u!4 &8843658782342761696 stripped
@@ -1555,17 +1614,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8152012885786784734, guid: e57b940421926264784c9b121edb3967, type: 3}
   m_PrefabInstance: {fileID: 836324045379583806}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1723992945 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 836324044930659407, guid: e57b940421926264784c9b121edb3967, type: 3}
-  m_PrefabInstance: {fileID: 836324045379583806}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d9608acc0cfbba47a3e591f497501e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8363707693312450733
 PrefabInstance:
   m_ObjectHideFlags: 0
